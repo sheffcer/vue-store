@@ -1,12 +1,17 @@
 <template>
   <header class="navbar">
-    <strong>Счетчик {{ counter }}</strong>
+    <strong>Счетчик {{ $store.state.counter }}</strong>
 
-    <button class="btn" @click="add">Добавить 5</button>
+    <button class="btn" @click="$store.state.counter++">Добавить</button>
   </header>
 </template>
 
 <script>
 export default {
+  computed: {
+    counter () {
+      return this.$store.state.counter
+    }
+  }
 }
 </script>
